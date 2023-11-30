@@ -1,0 +1,11 @@
+[35m[1mScanning dependencies of target RooUnfold[0m
+[35m[1mConsolidate compiler generated dependencies of target RooUnfold[0m
+[ 63%] Built target RooUnfold
+[35m[1mConsolidate compiler generated dependencies of target RooUnfoldExample[0m
+[35m[1mConsolidate compiler generated dependencies of target RooUnfoldTest2D[0m
+[35m[1mConsolidate compiler generated dependencies of target RooUnfoldTest[0m
+[35m[1mConsolidate compiler generated dependencies of target RooUnfoldTest3D[0m
+[100%] Built target RooUnfoldTest2D
+[100%] Built target RooUnfoldExample
+[100%] Built target RooUnfoldTest
+[100%] Built target RooUnfoldTest3D
