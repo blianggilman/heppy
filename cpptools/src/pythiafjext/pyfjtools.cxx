@@ -92,6 +92,7 @@ namespace pythiafjtools{
 					case kPhoton:       pmask[i] = (pythia.event[ip].id() == 22); 	break;
 					case kHadron: 		pmask[i] = pythia.event[ip].isHadron(); 	break;
 					case kResonance: 	pmask[i] = pythia.event[ip].isResonance(); 	break;
+					case kPhi:			pmask[i] = (pythia.event[ip].idAbs() == 333); break;
 				}
 			}
 			bool accept = ((mask & pmask) == mask) && ((negmask & pmask) == pmask);
@@ -331,6 +332,15 @@ namespace pythiafjtools{
 	}
 
 
+	// add the contents of two vectors together
+	std::vector<fastjet::PseudoJet> add_vectors( std::vector<fastjet::PseudoJet> v1, 
+												 std::vector<fastjet::PseudoJet> v2 )
+	{
+		v1.insert(v1.end(), v2.begin(), v2.end());
+		return v1;
+	}
+	
+
 	// check if D0's mother is D*
 	bool checkD0mother( const Pythia8::Pythia &pythia, int D0particle_index ) {
 
@@ -393,7 +403,7 @@ namespace pythiafjtools{
 	{
 		// std::cout << "checkpoint 1 " << v.size() << std::endl;
 		// std::cout << " D0 " << D0index << " dau1 " << dau1index << " dau2 " << dau2index << std::endl;
-		std::cout << "Replacing (!) Kpi " << dau1index << " and " << dau2index << " with D0 " << D0index << std::endl;
+		std::cout << "Replacing Kpi " << dau1index << " and " << dau2index << " with D0 " << D0index << std::endl;
 		fastjet::PseudoJet D0(pythia.event[D0index].px(), pythia.event[D0index].py(), pythia.event[D0index].pz(), pythia.event[D0index].e());
 
 		D0.set_user_index(D0index);

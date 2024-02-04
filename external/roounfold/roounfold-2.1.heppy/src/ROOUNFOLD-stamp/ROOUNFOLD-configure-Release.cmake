@@ -1,11 +1,11 @@
 
 cmake_minimum_required(VERSION 3.15)
 
-set(command "/usr/bin/cmake;/usr/bin/cmake;-DCMAKE_INSTALL_PREFIX=/software/users/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy;-DCMAKE_BUILD_TYPE=Release;-DPYTHON_EXECUTABLE=/software/users/blianggi/mypyjetty/pyjettyenv/bin/python3.10;-DPYTHON_INCLUDE_DIR=/usr/include/python3.10;-DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.10.so;-DCMAKE_PREFIX_PATH=/software/users/alice/yasp/software/root/default;-GUnix Makefiles;/software/users/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD")
+set(command "/global/common/software/nersc/pm-2021q4/sw/cmake-3.22.0/bin/cmake;/global/common/software/nersc/pm-2021q4/sw/cmake-3.22.0/bin/cmake;-DCMAKE_INSTALL_PREFIX=/global/cfs/cdirs/alice/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy;-DCMAKE_BUILD_TYPE=Release;-DPYTHON_EXECUTABLE=/global/cfs/cdirs/alice/blianggi/mypyjetty/pyjettyenv3.6/bin/python3.6;-DPYTHON_INCLUDE_DIR=/usr/include/python3.6m;-DPYTHON_LIBRARY=/usr/lib64/libpython3.6m.so;-DCMAKE_PREFIX_PATH=/global/cfs/cdirs/alice/heppy_soft/05-11-2023/yasp/software/root/6.28.00;-GUnix Makefiles;/global/cfs/cdirs/alice/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD")
 set(log_merged "")
 set(log_output_on_failure "")
-set(stdout_log "/software/users/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-configure-out.log")
-set(stderr_log "/software/users/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-configure-err.log")
+set(stdout_log "/global/cfs/cdirs/alice/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-configure-out.log")
+set(stderr_log "/global/cfs/cdirs/alice/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-configure-err.log")
 execute_process(
   COMMAND ${command}
   RESULT_VARIABLE result
@@ -31,7 +31,7 @@ if(result)
   if (${log_merged})
     set(msg "${msg}\nSee also\n  ${stderr_log}")
   else()
-    set(msg "${msg}\nSee also\n  /software/users/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-configure-*.log")
+    set(msg "${msg}\nSee also\n  /global/cfs/cdirs/alice/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-configure-*.log")
   endif()
   if (${log_output_on_failure})
     message(SEND_ERROR "${msg}")
@@ -50,7 +50,7 @@ if(result)
   endif()
 else()
   if(NOT "Unix Makefiles" MATCHES "Ninja")
-    set(msg "ROOUNFOLD configure command succeeded.  See also /software/users/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-configure-*.log")
+    set(msg "ROOUNFOLD configure command succeeded.  See also /global/cfs/cdirs/alice/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-configure-*.log")
     message(STATUS "${msg}")
   endif()
 endif()

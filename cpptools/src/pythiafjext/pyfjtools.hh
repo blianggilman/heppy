@@ -26,6 +26,7 @@ namespace pythiafjtools{
 		kPhoton  	,
 		kHadron  	,
 		kResonance  ,
+		kPhi		,
 		kMaxSetting
 	};
 
@@ -39,7 +40,9 @@ namespace pythiafjtools{
 																int user_index_offset = 0,
 																bool add_particle_info = false,
 																bool remove_soft_pion = false);
-
+	
+	std::vector<fastjet::PseudoJet> add_vectors( std::vector<fastjet::PseudoJet> v1, 
+												 std::vector<fastjet::PseudoJet> v2);
 	bool checkD0mother( const Pythia8::Pythia &pythia, int D0particle_index );
 	int getSoftPion( const Pythia8::Pythia &pythia, int D0particle_index );
 	int removeIndexFromv( std::vector<fastjet::PseudoJet> v, std::vector<int> saved_indices, int index);

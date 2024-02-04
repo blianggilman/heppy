@@ -1,11 +1,11 @@
 
 cmake_minimum_required(VERSION 3.15)
 
-set(command "/usr/bin/cmake;--build;.;--;-j;40")
+set(command "/global/common/software/nersc/pm-2021q4/sw/cmake-3.22.0/bin/cmake;--build;.;--;-j;256")
 set(log_merged "")
 set(log_output_on_failure "")
-set(stdout_log "/software/users/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-build-out.log")
-set(stderr_log "/software/users/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-build-err.log")
+set(stdout_log "/global/cfs/cdirs/alice/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-build-out.log")
+set(stderr_log "/global/cfs/cdirs/alice/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-build-err.log")
 execute_process(
   COMMAND ${command}
   RESULT_VARIABLE result
@@ -31,7 +31,7 @@ if(result)
   if (${log_merged})
     set(msg "${msg}\nSee also\n  ${stderr_log}")
   else()
-    set(msg "${msg}\nSee also\n  /software/users/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-build-*.log")
+    set(msg "${msg}\nSee also\n  /global/cfs/cdirs/alice/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-build-*.log")
   endif()
   if (${log_output_on_failure})
     message(SEND_ERROR "${msg}")
@@ -50,7 +50,7 @@ if(result)
   endif()
 else()
   if(NOT "Unix Makefiles" MATCHES "Ninja")
-    set(msg "ROOUNFOLD build command succeeded.  See also /software/users/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-build-*.log")
+    set(msg "ROOUNFOLD build command succeeded.  See also /global/cfs/cdirs/alice/blianggi/mypyjetty/heppy/external/roounfold/roounfold-2.1.heppy/src/ROOUNFOLD-stamp/ROOUNFOLD-build-*.log")
     message(STATUS "${msg}")
   endif()
 endif()
