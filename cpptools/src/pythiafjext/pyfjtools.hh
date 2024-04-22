@@ -48,6 +48,7 @@ namespace pythiafjtools{
 	int removeIndexFromv( std::vector<fastjet::PseudoJet> v, std::vector<int> saved_indices, int index);
 	std::vector<fastjet::PseudoJet> removeByIndex( std::vector<fastjet::PseudoJet> v, int indextoremove);
 	std::vector<fastjet::PseudoJet> removeByIndex( std::vector<fastjet::PseudoJet> v, int *selection, int nsel);
+	std::vector<fastjet::PseudoJet> addByIndex(std::vector<fastjet::PseudoJet> v, int indextoadd, fastjet::PseudoJet newPSjet);
 	std::vector<fastjet::PseudoJet> replaceKPwD0( const Pythia8::Pythia &pythia, std::vector<fastjet::PseudoJet> v, int D0index, int dau1index, int dau2index);
 
 	// implemented in fjtools

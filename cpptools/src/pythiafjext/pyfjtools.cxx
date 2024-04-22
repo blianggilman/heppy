@@ -399,6 +399,13 @@ namespace pythiafjtools{
 		return v;
 	}
 
+	std::vector<fastjet::PseudoJet> addByIndex(std::vector<fastjet::PseudoJet> v, int indextoadd, fastjet::PseudoJet newPSjet)
+	{
+		// std::cout << "in addByIndex " << v.size() << " indextoadd " << indextoadd << std::endl; 
+		v.insert(v.begin() + indextoadd, newPSjet); //index to insert, thing to insert
+		return v;
+	}
+
 	std::vector<fastjet::PseudoJet> replaceKPwD0(const Pythia8::Pythia &pythia, std::vector<fastjet::PseudoJet> v, int D0index, int dau1index, int dau2index)
 	{
 		// std::cout << "checkpoint 1 " << v.size() << std::endl;
