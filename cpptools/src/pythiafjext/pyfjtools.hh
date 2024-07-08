@@ -27,6 +27,8 @@ namespace pythiafjtools{
 		kHadron  	,
 		kResonance  ,
 		kPhi		,
+		kNeutralCharm,
+		kNeutralBeauty,
 		kMaxSetting
 	};
 

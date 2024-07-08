@@ -55,6 +55,11 @@ namespace pythiafjtools{
 		for (int ip = 0; ip < pythia.event.size(); ip++)
 		{
 			std::bitset<kMaxSetting> pmask(0);
+			int b_neutral_hadrons[] = { 511, 10511, 513, 10513, 20513, 515, 531, 10531, 533, 10533, 20533, 535, 
+										5122, 5212, 5214, 5232, 5322, 5324, 5142, 5412, 5414, 5342, 5432, 5434, 
+										5522, 5524, 5542, 5544 };
+			int c_neutral_hadrons[] = { 421, 10421, 423, 10423, 20423, 425, 4112, 4114, 4132, 4312, 4314, 4332, 4334 };
+									  
 			// for (unsigned int i = 0; i < nsel; i++)
 			// {
 			// 	switch(abs(selection[i]))
@@ -93,6 +98,8 @@ namespace pythiafjtools{
 					case kHadron: 		pmask[i] = pythia.event[ip].isHadron(); 	break;
 					case kResonance: 	pmask[i] = pythia.event[ip].isResonance(); 	break;
 					case kPhi:			pmask[i] = (pythia.event[ip].idAbs() == 333); break;
+					case kNeutralCharm:		pmask[i] = std::find(std::begin(c_neutral_hadrons), std::end(c_neutral_hadrons), pythia.event[ip].idAbs()) != std::end(c_neutral_hadrons);  break;
+					case kNeutralBeauty:	pmask[i] = std::find(std::begin(b_neutral_hadrons), std::end(b_neutral_hadrons), pythia.event[ip].idAbs()) != std::end(b_neutral_hadrons);  break;
 				}
 			}
 			bool accept = ((mask & pmask) == mask) && ((negmask & pmask) == pmask);
