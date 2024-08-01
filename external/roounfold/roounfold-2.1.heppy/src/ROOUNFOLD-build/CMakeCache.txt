@@ -157,7 +157,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //No help, variable specified on the command line.
-CMAKE_PREFIX_PATH:UNINITIALIZED=/global/cfs/cdirs/alice/heppy_soft/05-11-2023/yasp/software/root/6.28.00
+CMAKE_PREFIX_PATH:UNINITIALIZED=/global/cfs/cdirs/alice/heppy_soft/yasp/software/root/6.28.00
 
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
@@ -259,13 +259,13 @@ MEMORYCHECK_COMMAND:FILEPATH=/usr/bin/valgrind
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
 //No help, variable specified on the command line.
-PYTHON_EXECUTABLE:UNINITIALIZED=/global/cfs/cdirs/alice/blianggi/mypyjetty/pyjettyenv3.6/bin/python3.6
+PYTHON_EXECUTABLE:UNINITIALIZED=/global/cfs/cdirs/alice/blianggi/mypyjetty/pyjettyenv/bin/python3
 
 //No help, variable specified on the command line.
-PYTHON_INCLUDE_DIR:UNINITIALIZED=/usr/include/python3.6m
+PYTHON_INCLUDE_DIR:UNINITIALIZED=/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/include/python3.11
 
 //No help, variable specified on the command line.
-PYTHON_LIBRARY:UNINITIALIZED=/usr/lib64/libpython3.6m.so
+PYTHON_LIBRARY:UNINITIALIZED=/global/common/software/nersc/pe/conda-envs/24.1.0/python-3.11/nersc-python/lib/libpython3.11.so
 
 //Path to a library.
 ROOT_Core_LIBRARY:FILEPATH=/global/cfs/cdirs/alice/heppy_soft/05-11-2023/yasp/software/root/6.28.00/lib/libCore.so
