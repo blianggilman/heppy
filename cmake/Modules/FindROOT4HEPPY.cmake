@@ -75,7 +75,7 @@ if (ROOT_FOUND)
         #set($ENV{LD_LIBRARY_PATH} "$ENV{LD_LIBRARY_PATH}:${ROOT_HEPPY_PREFIX}/lib")
         #execute_process(  COMMAND ${Python3_EXECUTABLE} -c "import sys; sys.path.append('${ROOT_PYTHON_SUBDIR}'); import ROOT; ROOT.gROOT.SetBatch(True); print('[i] ROOT version from within python:',ROOT.gROOT.GetVersion());" 
         set(TESTCMND "import ROOT\; ROOT.gROOT.SetBatch(True)\; print('[i] ROOT version from within python:',ROOT.gROOT.GetVersion())\;")
-        message(STATUS "Te  thon_EXECUTABLE} -c ${TESTCMND}")
+        message(STATUS "Test command: ${Python_EXECUTABLE} -c ${TESTCMND}")
         execute_process(  COMMAND ${Python_EXECUTABLE} -c ${TESTCMND}
                           WORKING_DIRECTORY /tmp 
                           RESULT_VARIABLE LOAD_ROOT_PYTHON_RESULT 
